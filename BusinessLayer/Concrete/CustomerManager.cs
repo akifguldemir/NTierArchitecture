@@ -11,35 +11,35 @@ namespace BusinessLayer.Concrete
 {
     internal class CustomerManager : ICustomerService
     {
-        ICustomerDal _customerDal;
 
+        ICustomerDal _customerDal;
         public CustomerManager(ICustomerDal customerDal)
         {
             _customerDal = customerDal;
         }
-        public void TDelete(Category t)
+        public void TDelete(Customer t)
         {
-            
+            _customerDal.Delete(t);
         }
 
-        public Category TGetById(int id)
+        public Customer TGetById(int id)
         {
-            throw new NotImplementedException();
+            return _customerDal.GetById(id);
         }
 
-        public List<Category> TGetList()
+        public List<Customer> TGetList()
         {
-            throw new NotImplementedException();
+            return _customerDal.GetList();
         }
 
-        public void TInsert(Category t)
+        public void TInsert(Customer t)
         {
-            throw new NotImplementedException();
+            _customerDal.Insert(t);
         }
 
-        public void TUpdate(Category t)
+        public void TUpdate(Customer t)
         {
-            throw new NotImplementedException();
+            _customerDal.Update(t);
         }
     }
 }
