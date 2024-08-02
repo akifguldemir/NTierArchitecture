@@ -13,7 +13,7 @@ namespace Demo_Product.Controllers
 
         public IActionResult Index()
         {
-            var values = customerManager.TGetList();
+            var values = customerManager.GetCustomersListJob();
             return View(values);
         }
 
