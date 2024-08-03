@@ -39,5 +39,11 @@ namespace Demo_Product.Controllers
             return View();
         }
 
+        public async Task<IActionResult> Logout(UserLoginViewModel p)
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Index", "Login");
+        }
+
     }
 }
